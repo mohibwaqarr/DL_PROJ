@@ -1,0 +1,14 @@
+# Ignore datasets and generated trajectories
+data/
+*.npy
+
+# Ignore saved models
+models/
+*.pth
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore matplotlib plots (optional, but keeps the repo clean)
+results/

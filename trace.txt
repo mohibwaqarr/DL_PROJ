@@ -1,0 +1,764 @@
+============================================================
+ Executing Pipeline for CIFAR100 
+============================================================
+--> [1/4] Training Target Model (ResNet-50)...
+Training target model on: cuda
+Dataset: CIFAR100 | Classes: 100
+C:\Users\mohib\AppData\Local\Programs\Python\Python313\Lib\site-packages\torchvision\datasets\cifar.py:83: VisibleDeprecationWarning: dtype(): align should be passed as Python or NumPy boolean but got `align=0`. Did you mean to pass a tuple to create a subarray type? (Deprecated NumPy 2.4)
+  entry = pickle.load(f, encoding="latin1")
+
+  Epoch  | Mem Acc  | Non-Mem Acc | Gen Gap  | Mem Loss
+  ------------------------------------------------------
+      1  |    6.11% |       9.42% |   -3.31% | 4.4358
+      2  |   12.94% |      15.00% |   -2.06% | 3.9064
+      3  |   14.71% |      15.11% |   -0.40% | 3.9522
+      4  |   15.60% |      10.28% |    5.32% | 3.7594
+      5  |   19.17% |      20.06% |   -0.89% | 3.4196
+      6  |   23.34% |      21.03% |    2.31% | 3.2239
+      7  |   19.34% |      20.35% |   -1.01% | 3.5223
+      8  |   25.86% |      25.63% |    0.23% | 3.0453
+      9  |   30.16% |      24.99% |    5.17% | 2.8042
+     10  |   33.53% |      27.36% |    6.17% | 2.6334
+     11  |   38.34% |      28.41% |    9.92% | 2.3893
+     12  |   43.66% |      28.40% |   15.26% | 2.1534
+     13  |   47.69% |      30.39% |   17.30% | 1.9603
+     14  |   54.86% |      30.24% |   24.62% | 1.6445
+     15  |   62.54% |      29.74% |   32.80% | 1.3504
+     16  |   70.32% |      30.28% |   40.03% | 1.0450
+     17  |   76.81% |      30.51% |   46.30% | 0.8171
+     18  |   81.85% |      30.51% |   51.34% | 0.6591
+     19  |   85.81% |      29.66% |   56.15% | 0.5379
+     20  |   87.82% |      29.80% |   58.02% | 0.4602
+     21  |   88.27% |      30.34% |   57.93% | 0.4375
+     22  |   93.07% |      30.64% |   62.43% | 0.2847
+     23  |   94.75% |      31.80% |   62.94% | 0.2248
+     24  |   94.10% |      29.08% |   65.02% | 0.2436
+     25  |   92.23% |      31.59% |   60.64% | 0.2954
+     26  |   95.22% |      31.20% |   64.02% | 0.1963
+     27  |   95.97% |      31.50% |   64.47% | 0.1721
+     28  |   90.80% |      24.82% |   65.98% | 0.4130
+     29  |   79.62% |      30.05% |   49.57% | 0.7803
+     30  |   93.96% |      31.74% |   62.22% | 0.2281
+     31  |   97.43% |      32.34% |   65.08% | 0.1198
+     32  |   95.48% |      30.54% |   64.94% | 0.2196
+     33  |   94.83% |      31.54% |   63.29% | 0.2439
+     34  |   96.42% |      32.04% |   64.38% | 0.1854
+     35  |   94.88% |      29.82% |   65.06% | 0.2336
+     36  |   96.18% |      31.47% |   64.71% | 0.1789
+     37  |   96.87% |      32.42% |   64.44% | 0.1516
+     38  |   92.82% |      27.60% |   65.22% | 0.2880
+     39  |   91.76% |      30.99% |   60.77% | 0.2981
+     40  |   96.80% |      31.33% |   65.47% | 0.1407
+     41  |   96.83% |      31.09% |   65.74% | 0.1326
+     42  |   98.41% |      32.58% |   65.83% | 0.0770
+     43  |   98.80% |      32.50% |   66.30% | 0.0649
+     44  |   98.59% |      31.94% |   66.65% | 0.0645
+     45  |   95.00% |      28.62% |   66.38% | 0.1922
+     46  |   93.05% |      29.82% |   63.23% | 0.2460
+     47  |   94.99% |      30.14% |   64.85% | 0.2089
+     48  |   90.32% |      31.57% |   58.75% | 0.3705
+     49  |   97.20% |      31.08% |   66.12% | 0.1241
+     50  |   97.38% |      31.52% |   65.87% | 0.1125
+
+[DONE] Target model saved to models/targets/resnet50_CIFAR100_baseline.pth
+  Final Member Acc     : 97.38%
+  Final Non-Member Acc : 31.52%
+  Generalization Gap   : 65.87%  ← privacy signal ceiling
+[DONE] Plot saved to results/target_training_CIFAR100.png
+--> [2/4] Generating Trajectories (ResNet-50)...
+Generating trajectories on: cuda for CIFAR100
+Target model loaded.
+C:\Users\mohib\AppData\Local\Programs\Python\Python313\Lib\site-packages\torchvision\datasets\cifar.py:83: VisibleDeprecationWarning: dtype(): align should be passed as Python or NumPy boolean but got `align=0`. Did you mean to pass a tuple to create a subarray type? (Deprecated NumPy 2.4)
+  entry = pickle.load(f, encoding="latin1")
+
+Probing Members  (up to 10000 samples)...
+Members:   0%|                                                            | 0/196 [00:00<?, ?it/s]Generating trajectories on: cuda for CIFAR100
+Target model loaded.
+Generating trajectories on: cuda for CIFAR100
+Target model loaded.
+Members:  40%|████████████████████▌                              | 79/196 [01:51<02:45,  1.41s/it]
+  → 10112 samples,  shape: (10112, 12, 33)
+
+Probing Non-Members  (up to 10000 samples)...
+Non-Members:  40%|██████████████████▉                            | 79/196 [01:45<02:35,  1.33s/it]
+  → 10112 samples,  shape: (10112, 12, 33)
+
+[DONE] Saved to data/trajectories/CIFAR100/
+
+  --- Auditor Run 1/3 (Seed: 42) ---
+  --> [3/4] Training Trajectory Transformer...
+Loading trajectory data for CIFAR100...
+
+Training on: cuda
+C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328\src\auditor_arch.py:88: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+
+Training Trajectory Transformer for 40 epochs...
+
+Epoch [01/40]  Loss (T/V): 0.4338/0.3769  Acc (T/V): 82.7%/86.5%  AUC: 0.9131  LR: 0.000300  <-- best
+Epoch [02/40]  Loss (T/V): 0.3746/0.3708  Acc (T/V): 87.1%/87.4%  AUC: 0.9122  LR: 0.000298
+Epoch [03/40]  Loss (T/V): 0.3679/0.3661  Acc (T/V): 87.3%/87.6%  AUC: 0.9190  LR: 0.000296  <-- best
+Epoch [04/40]  Loss (T/V): 0.3628/0.3598  Acc (T/V): 87.5%/87.8%  AUC: 0.9241  LR: 0.000293  <-- best
+Epoch [05/40]  Loss (T/V): 0.3603/0.3608  Acc (T/V): 87.7%/87.8%  AUC: 0.9219  LR: 0.000289
+Epoch [06/40]  Loss (T/V): 0.3609/0.3595  Acc (T/V): 87.8%/87.9%  AUC: 0.9228  LR: 0.000284
+Epoch [07/40]  Loss (T/V): 0.3554/0.3600  Acc (T/V): 87.9%/87.4%  AUC: 0.9257  LR: 0.000278  <-- best
+Epoch [08/40]  Loss (T/V): 0.3540/0.3611  Acc (T/V): 88.1%/87.7%  AUC: 0.9243  LR: 0.000271
+Epoch [09/40]  Loss (T/V): 0.3515/0.3703  Acc (T/V): 88.1%/86.8%  AUC: 0.9229  LR: 0.000264
+Epoch [10/40]  Loss (T/V): 0.3530/0.3577  Acc (T/V): 87.9%/87.8%  AUC: 0.9242  LR: 0.000256
+Epoch [11/40]  Loss (T/V): 0.3509/0.3646  Acc (T/V): 88.1%/87.1%  AUC: 0.9221  LR: 0.000248
+Epoch [12/40]  Loss (T/V): 0.3481/0.3589  Acc (T/V): 88.3%/87.7%  AUC: 0.9262  LR: 0.000238  <-- best
+Epoch [13/40]  Loss (T/V): 0.3454/0.3748  Acc (T/V): 88.4%/86.2%  AUC: 0.9202  LR: 0.000229
+Epoch [14/40]  Loss (T/V): 0.3454/0.3602  Acc (T/V): 88.2%/88.1%  AUC: 0.9267  LR: 0.000218  <-- best
+Epoch [15/40]  Loss (T/V): 0.3439/0.3593  Acc (T/V): 88.3%/87.7%  AUC: 0.9261  LR: 0.000208
+Epoch [16/40]  Loss (T/V): 0.3433/0.3617  Acc (T/V): 88.5%/87.2%  AUC: 0.9256  LR: 0.000197
+Epoch [17/40]  Loss (T/V): 0.3409/0.3596  Acc (T/V): 88.6%/87.5%  AUC: 0.9256  LR: 0.000185
+Epoch [18/40]  Loss (T/V): 0.3405/0.3606  Acc (T/V): 88.6%/87.7%  AUC: 0.9250  LR: 0.000174
+Epoch [19/40]  Loss (T/V): 0.3383/0.3680  Acc (T/V): 88.8%/87.9%  AUC: 0.9250  LR: 0.000162
+Epoch [20/40]  Loss (T/V): 0.3372/0.3608  Acc (T/V): 88.7%/87.5%  AUC: 0.9240  LR: 0.000150
+Epoch [21/40]  Loss (T/V): 0.3342/0.3658  Acc (T/V): 89.0%/87.1%  AUC: 0.9229  LR: 0.000139
+Epoch [22/40]  Loss (T/V): 0.3331/0.3661  Acc (T/V): 88.9%/87.3%  AUC: 0.9242  LR: 0.000127
+Epoch [23/40]  Loss (T/V): 0.3309/0.3665  Acc (T/V): 89.1%/87.3%  AUC: 0.9240  LR: 0.000116
+Epoch [24/40]  Loss (T/V): 0.3266/0.3680  Acc (T/V): 89.1%/87.0%  AUC: 0.9230  LR: 0.000104
+Epoch [25/40]  Loss (T/V): 0.3280/0.3649  Acc (T/V): 89.0%/87.5%  AUC: 0.9242  LR: 0.000093
+Epoch [26/40]  Loss (T/V): 0.3265/0.3665  Acc (T/V): 89.3%/87.7%  AUC: 0.9241  LR: 0.000083
+Epoch [27/40]  Loss (T/V): 0.3242/0.3673  Acc (T/V): 89.4%/87.3%  AUC: 0.9236  LR: 0.000072
+Epoch [28/40]  Loss (T/V): 0.3210/0.3701  Acc (T/V): 89.5%/86.7%  AUC: 0.9205  LR: 0.000063
+Epoch [29/40]  Loss (T/V): 0.3192/0.3706  Acc (T/V): 89.4%/87.2%  AUC: 0.9222  LR: 0.000053
+Epoch [30/40]  Loss (T/V): 0.3178/0.3712  Acc (T/V): 89.6%/87.1%  AUC: 0.9224  LR: 0.000045
+Epoch [31/40]  Loss (T/V): 0.3159/0.3708  Acc (T/V): 89.7%/87.3%  AUC: 0.9224  LR: 0.000037
+Epoch [32/40]  Loss (T/V): 0.3148/0.3711  Acc (T/V): 89.9%/87.0%  AUC: 0.9228  LR: 0.000030
+Epoch [33/40]  Loss (T/V): 0.3144/0.3723  Acc (T/V): 89.9%/87.1%  AUC: 0.9228  LR: 0.000023
+Epoch [34/40]  Loss (T/V): 0.3140/0.3731  Acc (T/V): 90.0%/87.0%  AUC: 0.9218  LR: 0.000017
+Epoch [35/40]  Loss (T/V): 0.3132/0.3728  Acc (T/V): 90.0%/87.0%  AUC: 0.9216  LR: 0.000012
+Epoch [36/40]  Loss (T/V): 0.3104/0.3742  Acc (T/V): 90.1%/87.1%  AUC: 0.9218  LR: 0.000008
+Epoch [37/40]  Loss (T/V): 0.3098/0.3749  Acc (T/V): 90.1%/87.0%  AUC: 0.9211  LR: 0.000005
+Epoch [38/40]  Loss (T/V): 0.3090/0.3750  Acc (T/V): 90.2%/87.1%  AUC: 0.9213  LR: 0.000003
+Epoch [39/40]  Loss (T/V): 0.3108/0.3751  Acc (T/V): 90.0%/87.0%  AUC: 0.9212  LR: 0.000001
+Epoch [40/40]  Loss (T/V): 0.3091/0.3750  Acc (T/V): 90.2%/87.0%  AUC: 0.9212  LR: 0.000001
+
+[DONE] Best model saved to models/auditors/CIFAR100/transformer_auditor_best.pth
+  --> [4/4] Evaluating Auditor...
+  [OK] Run 1 Complete: Acc=88.11%, AUC=92.67%
+
+  --- Auditor Run 2/3 (Seed: 43) ---
+  --> [3/4] Training Trajectory Transformer...
+Loading trajectory data for CIFAR100...
+
+Training on: cuda
+C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328\src\auditor_arch.py:88: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+
+Training Trajectory Transformer for 40 epochs...
+
+Epoch [01/40]  Loss (T/V): 0.4518/0.3735  Acc (T/V): 81.8%/86.7%  AUC: 0.9163  LR: 0.000300  <-- best
+Epoch [02/40]  Loss (T/V): 0.3760/0.3668  Acc (T/V): 87.1%/87.3%  AUC: 0.9236  LR: 0.000298  <-- best
+Epoch [03/40]  Loss (T/V): 0.3689/0.3594  Acc (T/V): 87.5%/87.5%  AUC: 0.9302  LR: 0.000296  <-- best
+Epoch [04/40]  Loss (T/V): 0.3643/0.3602  Acc (T/V): 87.6%/87.7%  AUC: 0.9275  LR: 0.000293
+Epoch [05/40]  Loss (T/V): 0.3619/0.3541  Acc (T/V): 87.6%/88.0%  AUC: 0.9299  LR: 0.000289
+Epoch [06/40]  Loss (T/V): 0.3573/0.3563  Acc (T/V): 87.8%/87.7%  AUC: 0.9282  LR: 0.000284
+Epoch [07/40]  Loss (T/V): 0.3574/0.3552  Acc (T/V): 87.9%/87.8%  AUC: 0.9297  LR: 0.000278
+Epoch [08/40]  Loss (T/V): 0.3553/0.3591  Acc (T/V): 88.0%/87.6%  AUC: 0.9326  LR: 0.000271  <-- best
+Epoch [09/40]  Loss (T/V): 0.3546/0.3623  Acc (T/V): 88.0%/87.9%  AUC: 0.9314  LR: 0.000264
+Epoch [10/40]  Loss (T/V): 0.3538/0.3590  Acc (T/V): 88.0%/87.6%  AUC: 0.9260  LR: 0.000256
+Epoch [11/40]  Loss (T/V): 0.3524/0.3657  Acc (T/V): 88.1%/87.3%  AUC: 0.9260  LR: 0.000248
+Epoch [12/40]  Loss (T/V): 0.3497/0.3590  Acc (T/V): 88.2%/87.4%  AUC: 0.9259  LR: 0.000238
+Epoch [13/40]  Loss (T/V): 0.3481/0.3520  Acc (T/V): 88.3%/87.8%  AUC: 0.9317  LR: 0.000229
+Epoch [14/40]  Loss (T/V): 0.3474/0.3530  Acc (T/V): 88.2%/87.7%  AUC: 0.9317  LR: 0.000218
+Epoch [15/40]  Loss (T/V): 0.3466/0.3555  Acc (T/V): 88.3%/87.5%  AUC: 0.9310  LR: 0.000208
+Epoch [16/40]  Loss (T/V): 0.3448/0.3507  Acc (T/V): 88.2%/87.6%  AUC: 0.9330  LR: 0.000197  <-- best
+Epoch [17/40]  Loss (T/V): 0.3421/0.3514  Acc (T/V): 88.4%/87.5%  AUC: 0.9334  LR: 0.000185  <-- best
+Epoch [18/40]  Loss (T/V): 0.3411/0.3532  Acc (T/V): 88.5%/87.5%  AUC: 0.9318  LR: 0.000174
+Epoch [19/40]  Loss (T/V): 0.3406/0.3553  Acc (T/V): 88.5%/87.5%  AUC: 0.9304  LR: 0.000162
+Epoch [20/40]  Loss (T/V): 0.3392/0.3555  Acc (T/V): 88.5%/87.7%  AUC: 0.9285  LR: 0.000150
+Epoch [21/40]  Loss (T/V): 0.3367/0.3557  Acc (T/V): 88.6%/87.6%  AUC: 0.9294  LR: 0.000139
+Epoch [22/40]  Loss (T/V): 0.3362/0.3612  Acc (T/V): 88.7%/87.4%  AUC: 0.9282  LR: 0.000127
+Epoch [23/40]  Loss (T/V): 0.3350/0.3597  Acc (T/V): 88.7%/87.6%  AUC: 0.9271  LR: 0.000116
+Epoch [24/40]  Loss (T/V): 0.3327/0.3538  Acc (T/V): 88.8%/88.0%  AUC: 0.9291  LR: 0.000104
+Epoch [25/40]  Loss (T/V): 0.3313/0.3566  Acc (T/V): 89.0%/87.9%  AUC: 0.9287  LR: 0.000093
+Epoch [26/40]  Loss (T/V): 0.3289/0.3578  Acc (T/V): 89.1%/87.6%  AUC: 0.9275  LR: 0.000083
+Epoch [27/40]  Loss (T/V): 0.3281/0.3590  Acc (T/V): 89.2%/87.6%  AUC: 0.9285  LR: 0.000072
+Epoch [28/40]  Loss (T/V): 0.3266/0.3568  Acc (T/V): 89.3%/87.8%  AUC: 0.9292  LR: 0.000063
+Epoch [29/40]  Loss (T/V): 0.3240/0.3597  Acc (T/V): 89.1%/88.0%  AUC: 0.9273  LR: 0.000053
+Epoch [30/40]  Loss (T/V): 0.3233/0.3601  Acc (T/V): 89.3%/87.9%  AUC: 0.9267  LR: 0.000045
+Epoch [31/40]  Loss (T/V): 0.3220/0.3628  Acc (T/V): 89.3%/87.6%  AUC: 0.9260  LR: 0.000037
+Epoch [32/40]  Loss (T/V): 0.3204/0.3628  Acc (T/V): 89.6%/87.8%  AUC: 0.9266  LR: 0.000030
+Epoch [33/40]  Loss (T/V): 0.3189/0.3622  Acc (T/V): 89.5%/87.6%  AUC: 0.9264  LR: 0.000023
+Epoch [34/40]  Loss (T/V): 0.3185/0.3625  Acc (T/V): 89.5%/87.7%  AUC: 0.9262  LR: 0.000017
+Epoch [35/40]  Loss (T/V): 0.3163/0.3632  Acc (T/V): 89.6%/87.7%  AUC: 0.9260  LR: 0.000012
+Epoch [36/40]  Loss (T/V): 0.3178/0.3630  Acc (T/V): 89.7%/87.8%  AUC: 0.9258  LR: 0.000008
+Epoch [37/40]  Loss (T/V): 0.3169/0.3631  Acc (T/V): 89.6%/87.8%  AUC: 0.9262  LR: 0.000005
+Epoch [38/40]  Loss (T/V): 0.3162/0.3631  Acc (T/V): 89.6%/87.8%  AUC: 0.9260  LR: 0.000003
+Epoch [39/40]  Loss (T/V): 0.3166/0.3632  Acc (T/V): 89.6%/87.8%  AUC: 0.9260  LR: 0.000001
+Epoch [40/40]  Loss (T/V): 0.3155/0.3633  Acc (T/V): 89.8%/87.7%  AUC: 0.9259  LR: 0.000001
+
+[DONE] Best model saved to models/auditors/CIFAR100/transformer_auditor_best.pth
+  --> [4/4] Evaluating Auditor...
+  [OK] Run 2 Complete: Acc=87.47%, AUC=93.34%
+
+  --- Auditor Run 3/3 (Seed: 44) ---
+  --> [3/4] Training Trajectory Transformer...
+Loading trajectory data for CIFAR100...
+
+Training on: cuda
+C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328\src\auditor_arch.py:88: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+
+Training Trajectory Transformer for 40 epochs...
+
+Epoch [01/40]  Loss (T/V): 0.4495/0.3925  Acc (T/V): 81.6%/86.3%  AUC: 0.9065  LR: 0.000300  <-- best
+Epoch [02/40]  Loss (T/V): 0.3734/0.3700  Acc (T/V): 87.1%/87.0%  AUC: 0.9173  LR: 0.000298  <-- best
+Epoch [03/40]  Loss (T/V): 0.3689/0.3662  Acc (T/V): 87.5%/87.2%  AUC: 0.9216  LR: 0.000296  <-- best
+Epoch [04/40]  Loss (T/V): 0.3637/0.3715  Acc (T/V): 87.5%/87.3%  AUC: 0.9143  LR: 0.000293
+Epoch [05/40]  Loss (T/V): 0.3595/0.3592  Acc (T/V): 87.7%/87.4%  AUC: 0.9261  LR: 0.000289  <-- best
+Epoch [06/40]  Loss (T/V): 0.3579/0.3591  Acc (T/V): 87.9%/87.2%  AUC: 0.9264  LR: 0.000284  <-- best
+Epoch [07/40]  Loss (T/V): 0.3577/0.3581  Acc (T/V): 87.9%/87.6%  AUC: 0.9266  LR: 0.000278  <-- best
+Epoch [08/40]  Loss (T/V): 0.3545/0.3710  Acc (T/V): 87.9%/87.3%  AUC: 0.9239  LR: 0.000271
+Epoch [09/40]  Loss (T/V): 0.3532/0.3602  Acc (T/V): 88.0%/87.2%  AUC: 0.9267  LR: 0.000264  <-- best
+Epoch [10/40]  Loss (T/V): 0.3506/0.3560  Acc (T/V): 88.0%/87.7%  AUC: 0.9281  LR: 0.000256  <-- best
+Epoch [11/40]  Loss (T/V): 0.3495/0.3563  Acc (T/V): 88.1%/87.8%  AUC: 0.9283  LR: 0.000248  <-- best
+Epoch [12/40]  Loss (T/V): 0.3492/0.3551  Acc (T/V): 88.1%/87.8%  AUC: 0.9280  LR: 0.000238
+Epoch [13/40]  Loss (T/V): 0.3482/0.3555  Acc (T/V): 88.1%/87.7%  AUC: 0.9302  LR: 0.000229  <-- best
+Epoch [14/40]  Loss (T/V): 0.3466/0.3603  Acc (T/V): 88.2%/87.8%  AUC: 0.9284  LR: 0.000218
+Epoch [15/40]  Loss (T/V): 0.3464/0.3585  Acc (T/V): 88.2%/87.7%  AUC: 0.9287  LR: 0.000208
+Epoch [16/40]  Loss (T/V): 0.3449/0.3574  Acc (T/V): 88.2%/87.4%  AUC: 0.9266  LR: 0.000197
+Epoch [17/40]  Loss (T/V): 0.3437/0.3563  Acc (T/V): 88.2%/87.6%  AUC: 0.9277  LR: 0.000185
+Epoch [18/40]  Loss (T/V): 0.3449/0.3575  Acc (T/V): 88.3%/87.8%  AUC: 0.9262  LR: 0.000174
+Epoch [19/40]  Loss (T/V): 0.3416/0.3593  Acc (T/V): 88.5%/87.7%  AUC: 0.9258  LR: 0.000162
+Epoch [20/40]  Loss (T/V): 0.3403/0.3554  Acc (T/V): 88.5%/88.0%  AUC: 0.9280  LR: 0.000150
+Epoch [21/40]  Loss (T/V): 0.3387/0.3594  Acc (T/V): 88.6%/87.9%  AUC: 0.9275  LR: 0.000139
+Epoch [22/40]  Loss (T/V): 0.3370/0.3567  Acc (T/V): 88.6%/87.7%  AUC: 0.9279  LR: 0.000127
+Epoch [23/40]  Loss (T/V): 0.3338/0.3662  Acc (T/V): 88.7%/87.9%  AUC: 0.9250  LR: 0.000116
+Epoch [24/40]  Loss (T/V): 0.3329/0.3643  Acc (T/V): 88.6%/87.6%  AUC: 0.9262  LR: 0.000104
+Epoch [25/40]  Loss (T/V): 0.3319/0.3624  Acc (T/V): 88.8%/87.6%  AUC: 0.9232  LR: 0.000093
+Epoch [26/40]  Loss (T/V): 0.3312/0.3588  Acc (T/V): 88.8%/87.4%  AUC: 0.9264  LR: 0.000083
+Epoch [27/40]  Loss (T/V): 0.3291/0.3645  Acc (T/V): 88.9%/87.0%  AUC: 0.9237  LR: 0.000072
+Epoch [28/40]  Loss (T/V): 0.3275/0.3651  Acc (T/V): 88.9%/87.3%  AUC: 0.9227  LR: 0.000063
+Epoch [29/40]  Loss (T/V): 0.3263/0.3666  Acc (T/V): 89.0%/87.0%  AUC: 0.9227  LR: 0.000053
+Epoch [30/40]  Loss (T/V): 0.3259/0.3633  Acc (T/V): 89.1%/87.4%  AUC: 0.9242  LR: 0.000045
+Epoch [31/40]  Loss (T/V): 0.3236/0.3650  Acc (T/V): 89.2%/87.3%  AUC: 0.9233  LR: 0.000037
+Epoch [32/40]  Loss (T/V): 0.3220/0.3646  Acc (T/V): 89.1%/87.4%  AUC: 0.9250  LR: 0.000030
+Epoch [33/40]  Loss (T/V): 0.3191/0.3661  Acc (T/V): 89.3%/87.4%  AUC: 0.9240  LR: 0.000023
+Epoch [34/40]  Loss (T/V): 0.3200/0.3661  Acc (T/V): 89.3%/87.3%  AUC: 0.9237  LR: 0.000017
+Epoch [35/40]  Loss (T/V): 0.3188/0.3670  Acc (T/V): 89.3%/87.3%  AUC: 0.9240  LR: 0.000012
+Epoch [36/40]  Loss (T/V): 0.3186/0.3669  Acc (T/V): 89.3%/87.2%  AUC: 0.9237  LR: 0.000008
+Epoch [37/40]  Loss (T/V): 0.3175/0.3667  Acc (T/V): 89.5%/87.3%  AUC: 0.9240  LR: 0.000005
+Epoch [38/40]  Loss (T/V): 0.3172/0.3670  Acc (T/V): 89.6%/87.3%  AUC: 0.9238  LR: 0.000003
+Epoch [39/40]  Loss (T/V): 0.3177/0.3670  Acc (T/V): 89.3%/87.4%  AUC: 0.9238  LR: 0.000001
+Epoch [40/40]  Loss (T/V): 0.3177/0.3670  Acc (T/V): 89.4%/87.4%  AUC: 0.9238  LR: 0.000001
+
+[DONE] Best model saved to models/auditors/CIFAR100/transformer_auditor_best.pth
+  --> [4/4] Evaluating Auditor...
+  [OK] Run 3 Complete: Acc=87.66%, AUC=93.02%
+
+============================================================
+ Executing Pipeline for CIFAR10 
+============================================================
+--> [1/4] Training Target Model (ResNet-50)...
+Training target model on: cuda
+Dataset: CIFAR10 | Classes: 10
+C:\Users\mohib\AppData\Local\Programs\Python\Python313\Lib\site-packages\torchvision\datasets\cifar.py:83: VisibleDeprecationWarning: dtype(): align should be passed as Python or NumPy boolean but got `align=0`. Did you mean to pass a tuple to create a subarray type? (Deprecated NumPy 2.4)
+  entry = pickle.load(f, encoding="latin1")
+
+  Epoch  | Mem Acc  | Non-Mem Acc | Gen Gap  | Mem Loss
+  ------------------------------------------------------
+      1  |   33.36% |      41.45% |   -8.09% | 1.9608
+      2  |   43.73% |      39.70% |    4.03% | 1.7106
+      3  |   48.80% |      49.68% |   -0.88% | 1.5257
+      4  |   50.62% |      45.20% |    5.42% | 1.4820
+      5  |   44.96% |      40.20% |    4.76% | 1.6281
+      6  |   42.85% |      28.73% |   14.12% | 1.7074
+      7  |   40.65% |      45.04% |   -4.38% | 1.7069
+      8  |   47.06% |      48.58% |   -1.51% | 1.5158
+      9  |   43.32% |      33.34% |    9.98% | 1.6248
+     10  |   41.73% |      38.51% |    3.22% | 1.6764
+     11  |   46.17% |      47.10% |   -0.92% | 1.4999
+     12  |   53.45% |      50.33% |    3.12% | 1.3192
+     13  |   55.50% |      53.52% |    1.98% | 1.2535
+     14  |   59.70% |      30.85% |   28.86% | 1.1522
+     15  |   49.07% |      51.42% |   -2.35% | 1.4542
+     16  |   58.36% |      54.33% |    4.03% | 1.1760
+     17  |   62.86% |      47.09% |   15.77% | 1.0776
+     18  |   59.41% |      55.40% |    4.01% | 1.1654
+     19  |   58.99% |      54.27% |    4.72% | 1.1901
+     20  |   64.99% |      60.76% |    4.23% | 1.0079
+     21  |   70.85% |      62.54% |    8.31% | 0.8420
+     22  |   74.36% |      63.20% |   11.16% | 0.7403
+     23  |   78.15% |      63.61% |   14.54% | 0.6309
+     24  |   76.34% |      60.62% |   15.72% | 0.6942
+     25  |   75.36% |      62.80% |   12.56% | 0.7162
+     26  |   73.24% |      65.00% |    8.24% | 0.7830
+     27  |   83.35% |      65.07% |   18.28% | 0.4816
+     28  |   88.30% |      62.72% |   25.58% | 0.3348
+     29  |   78.79% |      65.60% |   13.20% | 0.6225
+     30  |   74.55% |      58.09% |   16.46% | 0.7665
+     31  |   67.44% |      63.87% |    3.57% | 0.9792
+     32  |   79.02% |      63.78% |   15.24% | 0.6056
+     33  |   84.32% |      66.62% |   17.70% | 0.4573
+     34  |   90.37% |      67.34% |   23.03% | 0.2928
+     35  |   93.39% |      63.70% |   29.69% | 0.2016
+     36  |   94.21% |      67.22% |   26.99% | 0.1731
+     37  |   96.24% |      66.91% |   29.34% | 0.1081
+     38  |   96.33% |      66.91% |   29.42% | 0.1051
+     39  |   96.66% |      66.91% |   29.75% | 0.0975
+     40  |   96.63% |      66.62% |   30.01% | 0.0975
+     41  |   97.24% |      67.12% |   30.12% | 0.0894
+     42  |   96.66% |      65.88% |   30.78% | 0.0982
+     43  |   97.31% |      66.62% |   30.68% | 0.0835
+     44  |   95.10% |      59.10% |   36.00% | 0.1620
+     45  |   86.29% |      60.73% |   25.56% | 0.4593
+     46  |   78.20% |      63.27% |   14.92% | 0.7076
+     47  |   85.62% |      65.63% |   19.99% | 0.4539
+     48  |   83.69% |      63.80% |   19.88% | 0.5378
+     49  |   90.23% |      67.90% |   22.33% | 0.3060
+     50  |   97.35% |      68.39% |   28.96% | 0.0814
+
+[DONE] Target model saved to models/targets/resnet50_CIFAR10_baseline.pth
+  Final Member Acc     : 97.35%
+  Final Non-Member Acc : 68.39%
+  Generalization Gap   : 28.96%  ← privacy signal ceiling
+[DONE] Plot saved to results/target_training_CIFAR10.png
+--> [2/4] Generating Trajectories (ResNet-50)...
+Generating trajectories on: cuda for CIFAR10
+Target model loaded.
+C:\Users\mohib\AppData\Local\Programs\Python\Python313\Lib\site-packages\torchvision\datasets\cifar.py:83: VisibleDeprecationWarning: dtype(): align should be passed as Python or NumPy boolean but got `align=0`. Did you mean to pass a tuple to create a subarray type? (Deprecated NumPy 2.4)
+  entry = pickle.load(f, encoding="latin1")
+
+Probing Members  (up to 10000 samples)...
+Members:   0%|                                                            | 0/196 [00:00<?, ?it/s]Generating trajectories on: cuda for CIFAR10
+Target model loaded.
+Generating trajectories on: cuda for CIFAR10
+Target model loaded.
+Members:  40%|████████████████████▌                              | 79/196 [02:03<03:03,  1.57s/it]
+  → 10112 samples,  shape: (10112, 12, 33)
+
+Probing Non-Members  (up to 10000 samples)...
+Non-Members:  40%|██████████████████▉                            | 79/196 [01:57<02:53,  1.48s/it]
+  → 10112 samples,  shape: (10112, 12, 33)
+
+[DONE] Saved to data/trajectories/CIFAR10/
+
+  --- Auditor Run 1/3 (Seed: 42) ---
+  --> [3/4] Training Trajectory Transformer...
+Loading trajectory data for CIFAR10...
+
+Training on: cuda
+C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328\src\auditor_arch.py:88: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+
+Training Trajectory Transformer for 40 epochs...
+
+Epoch [01/40]  Loss (T/V): 0.6286/0.5830  Acc (T/V): 63.5%/67.8%  AUC: 0.7210  LR: 0.000300  <-- best
+Epoch [02/40]  Loss (T/V): 0.5904/0.5766  Acc (T/V): 68.0%/69.9%  AUC: 0.7255  LR: 0.000298  <-- best
+Epoch [03/40]  Loss (T/V): 0.5840/0.5740  Acc (T/V): 68.7%/70.1%  AUC: 0.7331  LR: 0.000296  <-- best
+Epoch [04/40]  Loss (T/V): 0.5839/0.5765  Acc (T/V): 68.7%/70.0%  AUC: 0.7332  LR: 0.000293  <-- best
+Epoch [05/40]  Loss (T/V): 0.5820/0.5744  Acc (T/V): 68.9%/69.9%  AUC: 0.7349  LR: 0.000289  <-- best
+Epoch [06/40]  Loss (T/V): 0.5815/0.5734  Acc (T/V): 69.0%/69.8%  AUC: 0.7319  LR: 0.000284
+Epoch [07/40]  Loss (T/V): 0.5810/0.5740  Acc (T/V): 69.0%/69.8%  AUC: 0.7356  LR: 0.000278  <-- best
+Epoch [08/40]  Loss (T/V): 0.5782/0.5745  Acc (T/V): 69.1%/70.2%  AUC: 0.7335  LR: 0.000271
+Epoch [09/40]  Loss (T/V): 0.5777/0.5735  Acc (T/V): 69.4%/69.9%  AUC: 0.7376  LR: 0.000264  <-- best
+Epoch [10/40]  Loss (T/V): 0.5781/0.5752  Acc (T/V): 69.2%/70.2%  AUC: 0.7353  LR: 0.000256
+Epoch [11/40]  Loss (T/V): 0.5788/0.5809  Acc (T/V): 69.2%/70.2%  AUC: 0.7322  LR: 0.000248
+Epoch [12/40]  Loss (T/V): 0.5762/0.5746  Acc (T/V): 69.4%/70.1%  AUC: 0.7256  LR: 0.000238
+Epoch [13/40]  Loss (T/V): 0.5754/0.5745  Acc (T/V): 69.5%/69.5%  AUC: 0.7395  LR: 0.000229  <-- best
+Epoch [14/40]  Loss (T/V): 0.5760/0.5731  Acc (T/V): 69.5%/70.1%  AUC: 0.7402  LR: 0.000218  <-- best
+Epoch [15/40]  Loss (T/V): 0.5730/0.5755  Acc (T/V): 69.6%/70.4%  AUC: 0.7368  LR: 0.000208
+Epoch [16/40]  Loss (T/V): 0.5721/0.5740  Acc (T/V): 69.7%/69.8%  AUC: 0.7374  LR: 0.000197
+Epoch [17/40]  Loss (T/V): 0.5724/0.5734  Acc (T/V): 69.7%/69.9%  AUC: 0.7399  LR: 0.000185
+Epoch [18/40]  Loss (T/V): 0.5709/0.5748  Acc (T/V): 69.8%/69.6%  AUC: 0.7386  LR: 0.000174
+Epoch [19/40]  Loss (T/V): 0.5689/0.5758  Acc (T/V): 69.8%/69.6%  AUC: 0.7381  LR: 0.000162
+Epoch [20/40]  Loss (T/V): 0.5704/0.5751  Acc (T/V): 69.5%/70.0%  AUC: 0.7421  LR: 0.000150  <-- best
+Epoch [21/40]  Loss (T/V): 0.5682/0.5769  Acc (T/V): 70.0%/70.0%  AUC: 0.7374  LR: 0.000139
+Epoch [22/40]  Loss (T/V): 0.5667/0.5770  Acc (T/V): 69.8%/69.7%  AUC: 0.7390  LR: 0.000127
+Epoch [23/40]  Loss (T/V): 0.5654/0.5764  Acc (T/V): 70.1%/70.0%  AUC: 0.7424  LR: 0.000116  <-- best
+Epoch [24/40]  Loss (T/V): 0.5640/0.5767  Acc (T/V): 70.0%/70.2%  AUC: 0.7368  LR: 0.000104
+Epoch [25/40]  Loss (T/V): 0.5628/0.5812  Acc (T/V): 70.1%/69.6%  AUC: 0.7359  LR: 0.000093
+Epoch [26/40]  Loss (T/V): 0.5622/0.5787  Acc (T/V): 70.2%/69.7%  AUC: 0.7400  LR: 0.000083
+Epoch [27/40]  Loss (T/V): 0.5609/0.5796  Acc (T/V): 70.3%/69.5%  AUC: 0.7403  LR: 0.000072
+Epoch [28/40]  Loss (T/V): 0.5591/0.5801  Acc (T/V): 70.3%/69.7%  AUC: 0.7380  LR: 0.000063
+Epoch [29/40]  Loss (T/V): 0.5588/0.5812  Acc (T/V): 70.5%/69.5%  AUC: 0.7385  LR: 0.000053
+Epoch [30/40]  Loss (T/V): 0.5555/0.5809  Acc (T/V): 70.6%/69.5%  AUC: 0.7382  LR: 0.000045
+Epoch [31/40]  Loss (T/V): 0.5552/0.5844  Acc (T/V): 70.7%/69.0%  AUC: 0.7358  LR: 0.000037
+Epoch [32/40]  Loss (T/V): 0.5547/0.5844  Acc (T/V): 70.8%/69.2%  AUC: 0.7365  LR: 0.000030
+Epoch [33/40]  Loss (T/V): 0.5529/0.5832  Acc (T/V): 71.0%/69.2%  AUC: 0.7367  LR: 0.000023
+Epoch [34/40]  Loss (T/V): 0.5514/0.5839  Acc (T/V): 70.8%/69.1%  AUC: 0.7360  LR: 0.000017
+Epoch [35/40]  Loss (T/V): 0.5515/0.5852  Acc (T/V): 71.1%/69.0%  AUC: 0.7368  LR: 0.000012
+Epoch [36/40]  Loss (T/V): 0.5509/0.5853  Acc (T/V): 70.9%/69.1%  AUC: 0.7364  LR: 0.000008
+Epoch [37/40]  Loss (T/V): 0.5506/0.5850  Acc (T/V): 71.0%/69.2%  AUC: 0.7374  LR: 0.000005
+Epoch [38/40]  Loss (T/V): 0.5503/0.5853  Acc (T/V): 70.8%/69.2%  AUC: 0.7370  LR: 0.000003
+Epoch [39/40]  Loss (T/V): 0.5496/0.5854  Acc (T/V): 71.0%/69.2%  AUC: 0.7370  LR: 0.000001
+Epoch [40/40]  Loss (T/V): 0.5506/0.5855  Acc (T/V): 71.2%/69.2%  AUC: 0.7370  LR: 0.000001
+
+[DONE] Best model saved to models/auditors/CIFAR10/transformer_auditor_best.pth
+  --> [4/4] Evaluating Auditor...
+  [OK] Run 1 Complete: Acc=70.04%, AUC=74.24%
+
+  --- Auditor Run 2/3 (Seed: 43) ---
+  --> [3/4] Training Trajectory Transformer...
+Loading trajectory data for CIFAR10...
+
+Training on: cuda
+C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328\src\auditor_arch.py:88: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+
+Training Trajectory Transformer for 40 epochs...
+
+Epoch [01/40]  Loss (T/V): 0.6277/0.5863  Acc (T/V): 63.9%/68.1%  AUC: 0.7220  LR: 0.000300  <-- best
+Epoch [02/40]  Loss (T/V): 0.5903/0.5811  Acc (T/V): 67.9%/68.9%  AUC: 0.7203  LR: 0.000298
+Epoch [03/40]  Loss (T/V): 0.5847/0.5802  Acc (T/V): 68.6%/68.8%  AUC: 0.7309  LR: 0.000296  <-- best
+Epoch [04/40]  Loss (T/V): 0.5814/0.5825  Acc (T/V): 69.0%/69.2%  AUC: 0.7285  LR: 0.000293
+Epoch [05/40]  Loss (T/V): 0.5818/0.5876  Acc (T/V): 69.1%/68.5%  AUC: 0.7118  LR: 0.000289
+Epoch [06/40]  Loss (T/V): 0.5797/0.5791  Acc (T/V): 69.1%/68.9%  AUC: 0.7375  LR: 0.000284  <-- best
+Epoch [07/40]  Loss (T/V): 0.5789/0.5756  Acc (T/V): 69.2%/69.1%  AUC: 0.7372  LR: 0.000278
+Epoch [08/40]  Loss (T/V): 0.5793/0.5813  Acc (T/V): 69.2%/68.9%  AUC: 0.7212  LR: 0.000271
+Epoch [09/40]  Loss (T/V): 0.5782/0.5765  Acc (T/V): 69.3%/68.9%  AUC: 0.7340  LR: 0.000264
+Epoch [10/40]  Loss (T/V): 0.5779/0.5782  Acc (T/V): 69.3%/69.6%  AUC: 0.7320  LR: 0.000256
+Epoch [11/40]  Loss (T/V): 0.5765/0.5755  Acc (T/V): 69.3%/69.3%  AUC: 0.7398  LR: 0.000248  <-- best
+Epoch [12/40]  Loss (T/V): 0.5762/0.5771  Acc (T/V): 69.2%/69.1%  AUC: 0.7355  LR: 0.000238
+Epoch [13/40]  Loss (T/V): 0.5746/0.5793  Acc (T/V): 69.5%/68.9%  AUC: 0.7342  LR: 0.000229
+Epoch [14/40]  Loss (T/V): 0.5749/0.5764  Acc (T/V): 69.5%/69.7%  AUC: 0.7349  LR: 0.000218
+Epoch [15/40]  Loss (T/V): 0.5727/0.5755  Acc (T/V): 69.6%/69.5%  AUC: 0.7375  LR: 0.000208
+Epoch [16/40]  Loss (T/V): 0.5730/0.5800  Acc (T/V): 69.6%/68.7%  AUC: 0.7293  LR: 0.000197
+Epoch [17/40]  Loss (T/V): 0.5710/0.5773  Acc (T/V): 69.7%/69.3%  AUC: 0.7396  LR: 0.000185
+Epoch [18/40]  Loss (T/V): 0.5708/0.5746  Acc (T/V): 69.7%/69.3%  AUC: 0.7392  LR: 0.000174
+Epoch [19/40]  Loss (T/V): 0.5687/0.5793  Acc (T/V): 70.0%/69.2%  AUC: 0.7334  LR: 0.000162
+Epoch [20/40]  Loss (T/V): 0.5680/0.5763  Acc (T/V): 69.9%/69.4%  AUC: 0.7333  LR: 0.000150
+Epoch [21/40]  Loss (T/V): 0.5665/0.5752  Acc (T/V): 70.1%/69.4%  AUC: 0.7391  LR: 0.000139
+Epoch [22/40]  Loss (T/V): 0.5660/0.5768  Acc (T/V): 70.0%/69.5%  AUC: 0.7313  LR: 0.000127
+Epoch [23/40]  Loss (T/V): 0.5630/0.5801  Acc (T/V): 70.1%/68.3%  AUC: 0.7310  LR: 0.000116
+Epoch [24/40]  Loss (T/V): 0.5625/0.5803  Acc (T/V): 70.2%/68.3%  AUC: 0.7330  LR: 0.000104
+Epoch [25/40]  Loss (T/V): 0.5609/0.5815  Acc (T/V): 70.4%/69.0%  AUC: 0.7336  LR: 0.000093
+Epoch [26/40]  Loss (T/V): 0.5595/0.5812  Acc (T/V): 70.6%/69.0%  AUC: 0.7305  LR: 0.000083
+Epoch [27/40]  Loss (T/V): 0.5568/0.5806  Acc (T/V): 70.4%/68.8%  AUC: 0.7330  LR: 0.000072
+Epoch [28/40]  Loss (T/V): 0.5563/0.5805  Acc (T/V): 70.7%/69.1%  AUC: 0.7321  LR: 0.000063
+Epoch [29/40]  Loss (T/V): 0.5552/0.5837  Acc (T/V): 70.9%/68.4%  AUC: 0.7307  LR: 0.000053
+Epoch [30/40]  Loss (T/V): 0.5533/0.5838  Acc (T/V): 70.9%/69.0%  AUC: 0.7321  LR: 0.000045
+Epoch [31/40]  Loss (T/V): 0.5508/0.5853  Acc (T/V): 71.2%/68.7%  AUC: 0.7291  LR: 0.000037
+Epoch [32/40]  Loss (T/V): 0.5508/0.5863  Acc (T/V): 71.5%/69.0%  AUC: 0.7289  LR: 0.000030
+Epoch [33/40]  Loss (T/V): 0.5478/0.5868  Acc (T/V): 71.5%/68.7%  AUC: 0.7304  LR: 0.000023
+Epoch [34/40]  Loss (T/V): 0.5476/0.5863  Acc (T/V): 71.5%/68.7%  AUC: 0.7297  LR: 0.000017
+Epoch [35/40]  Loss (T/V): 0.5475/0.5880  Acc (T/V): 71.4%/68.6%  AUC: 0.7284  LR: 0.000012
+Epoch [36/40]  Loss (T/V): 0.5457/0.5877  Acc (T/V): 71.4%/68.5%  AUC: 0.7287  LR: 0.000008
+Epoch [37/40]  Loss (T/V): 0.5471/0.5878  Acc (T/V): 71.5%/68.6%  AUC: 0.7296  LR: 0.000005
+Epoch [38/40]  Loss (T/V): 0.5453/0.5878  Acc (T/V): 71.6%/68.6%  AUC: 0.7295  LR: 0.000003
+Epoch [39/40]  Loss (T/V): 0.5451/0.5879  Acc (T/V): 71.8%/68.6%  AUC: 0.7296  LR: 0.000001
+Epoch [40/40]  Loss (T/V): 0.5445/0.5880  Acc (T/V): 71.7%/68.6%  AUC: 0.7296  LR: 0.000001
+
+[DONE] Best model saved to models/auditors/CIFAR10/transformer_auditor_best.pth
+  --> [4/4] Evaluating Auditor...
+  [OK] Run 2 Complete: Acc=69.32%, AUC=73.98%
+
+  --- Auditor Run 3/3 (Seed: 44) ---
+  --> [3/4] Training Trajectory Transformer...
+Loading trajectory data for CIFAR10...
+
+Training on: cuda
+C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328\src\auditor_arch.py:88: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+
+Training Trajectory Transformer for 40 epochs...
+
+Epoch [01/40]  Loss (T/V): 0.6249/0.5939  Acc (T/V): 64.2%/68.0%  AUC: 0.6930  LR: 0.000300  <-- best
+Epoch [02/40]  Loss (T/V): 0.5893/0.5904  Acc (T/V): 68.1%/68.3%  AUC: 0.7115  LR: 0.000298  <-- best
+Epoch [03/40]  Loss (T/V): 0.5834/0.5863  Acc (T/V): 68.7%/68.6%  AUC: 0.7062  LR: 0.000296
+Epoch [04/40]  Loss (T/V): 0.5817/0.5842  Acc (T/V): 68.9%/68.5%  AUC: 0.7231  LR: 0.000293  <-- best
+Epoch [05/40]  Loss (T/V): 0.5804/0.5835  Acc (T/V): 68.8%/68.8%  AUC: 0.7241  LR: 0.000289  <-- best
+Epoch [06/40]  Loss (T/V): 0.5796/0.5835  Acc (T/V): 69.2%/69.1%  AUC: 0.7234  LR: 0.000284
+Epoch [07/40]  Loss (T/V): 0.5788/0.5868  Acc (T/V): 69.2%/68.9%  AUC: 0.7148  LR: 0.000278
+Epoch [08/40]  Loss (T/V): 0.5779/0.5854  Acc (T/V): 69.2%/69.0%  AUC: 0.7186  LR: 0.000271
+Epoch [09/40]  Loss (T/V): 0.5766/0.5834  Acc (T/V): 69.4%/68.9%  AUC: 0.7275  LR: 0.000264  <-- best
+Epoch [10/40]  Loss (T/V): 0.5751/0.5852  Acc (T/V): 69.6%/68.4%  AUC: 0.7245  LR: 0.000256
+Epoch [11/40]  Loss (T/V): 0.5754/0.5845  Acc (T/V): 69.5%/68.9%  AUC: 0.7249  LR: 0.000248
+Epoch [12/40]  Loss (T/V): 0.5745/0.5854  Acc (T/V): 69.6%/68.8%  AUC: 0.7248  LR: 0.000238
+Epoch [13/40]  Loss (T/V): 0.5737/0.5835  Acc (T/V): 69.8%/68.7%  AUC: 0.7329  LR: 0.000229  <-- best
+Epoch [14/40]  Loss (T/V): 0.5722/0.5873  Acc (T/V): 69.6%/68.6%  AUC: 0.7264  LR: 0.000218
+Epoch [15/40]  Loss (T/V): 0.5727/0.5868  Acc (T/V): 69.6%/68.5%  AUC: 0.7292  LR: 0.000208
+Epoch [16/40]  Loss (T/V): 0.5707/0.5881  Acc (T/V): 69.8%/68.4%  AUC: 0.7249  LR: 0.000197
+Epoch [17/40]  Loss (T/V): 0.5696/0.5878  Acc (T/V): 69.9%/68.6%  AUC: 0.7254  LR: 0.000185
+Epoch [18/40]  Loss (T/V): 0.5695/0.5865  Acc (T/V): 69.9%/68.4%  AUC: 0.7307  LR: 0.000174
+Epoch [19/40]  Loss (T/V): 0.5679/0.5885  Acc (T/V): 70.3%/68.8%  AUC: 0.7206  LR: 0.000162
+Epoch [20/40]  Loss (T/V): 0.5658/0.5910  Acc (T/V): 70.1%/68.2%  AUC: 0.7277  LR: 0.000150
+Epoch [21/40]  Loss (T/V): 0.5654/0.5883  Acc (T/V): 70.3%/68.7%  AUC: 0.7308  LR: 0.000139
+Epoch [22/40]  Loss (T/V): 0.5657/0.5883  Acc (T/V): 70.5%/68.7%  AUC: 0.7285  LR: 0.000127
+Epoch [23/40]  Loss (T/V): 0.5627/0.5897  Acc (T/V): 70.5%/68.6%  AUC: 0.7311  LR: 0.000116
+Epoch [24/40]  Loss (T/V): 0.5613/0.5927  Acc (T/V): 70.5%/67.6%  AUC: 0.7227  LR: 0.000104
+Epoch [25/40]  Loss (T/V): 0.5605/0.5897  Acc (T/V): 70.5%/68.6%  AUC: 0.7259  LR: 0.000093
+Epoch [26/40]  Loss (T/V): 0.5593/0.5908  Acc (T/V): 70.6%/68.2%  AUC: 0.7268  LR: 0.000083
+Epoch [27/40]  Loss (T/V): 0.5577/0.5918  Acc (T/V): 70.9%/68.0%  AUC: 0.7261  LR: 0.000072
+Epoch [28/40]  Loss (T/V): 0.5565/0.5953  Acc (T/V): 70.9%/68.1%  AUC: 0.7207  LR: 0.000063
+Epoch [29/40]  Loss (T/V): 0.5555/0.5931  Acc (T/V): 70.9%/68.2%  AUC: 0.7292  LR: 0.000053
+Epoch [30/40]  Loss (T/V): 0.5537/0.5936  Acc (T/V): 71.0%/67.8%  AUC: 0.7259  LR: 0.000045
+Epoch [31/40]  Loss (T/V): 0.5517/0.5951  Acc (T/V): 71.3%/68.3%  AUC: 0.7289  LR: 0.000037
+Epoch [32/40]  Loss (T/V): 0.5508/0.5962  Acc (T/V): 71.3%/67.8%  AUC: 0.7269  LR: 0.000030
+Epoch [33/40]  Loss (T/V): 0.5506/0.5946  Acc (T/V): 71.2%/68.2%  AUC: 0.7283  LR: 0.000023
+Epoch [34/40]  Loss (T/V): 0.5499/0.5955  Acc (T/V): 71.3%/67.6%  AUC: 0.7255  LR: 0.000017
+Epoch [35/40]  Loss (T/V): 0.5484/0.5976  Acc (T/V): 71.6%/67.6%  AUC: 0.7245  LR: 0.000012
+Epoch [36/40]  Loss (T/V): 0.5485/0.5964  Acc (T/V): 71.7%/67.4%  AUC: 0.7250  LR: 0.000008
+Epoch [37/40]  Loss (T/V): 0.5479/0.5969  Acc (T/V): 71.5%/67.5%  AUC: 0.7250  LR: 0.000005
+Epoch [38/40]  Loss (T/V): 0.5458/0.5972  Acc (T/V): 71.8%/67.5%  AUC: 0.7249  LR: 0.000003
+Epoch [39/40]  Loss (T/V): 0.5470/0.5971  Acc (T/V): 71.7%/67.4%  AUC: 0.7250  LR: 0.000001
+Epoch [40/40]  Loss (T/V): 0.5469/0.5971  Acc (T/V): 71.8%/67.5%  AUC: 0.7250  LR: 0.000001
+
+[DONE] Best model saved to models/auditors/CIFAR10/transformer_auditor_best.pth
+  --> [4/4] Evaluating Auditor...
+  [OK] Run 3 Complete: Acc=68.70%, AUC=73.29%
+
+============================================================
+ Executing Pipeline for STL10 
+============================================================
+--> [1/4] Training Target Model (ResNet-50)...
+Training target model on: cuda
+Dataset: STL10 | Classes: 10
+100%|████████████████████████████████████████████████████████| 2.64G/2.64G [14:13<00:00, 3.09MB/s]
+
+  Epoch  | Mem Acc  | Non-Mem Acc | Gen Gap  | Mem Loss
+  ------------------------------------------------------
+      1  |   16.28% |      12.88% |    3.40% | 2.6273
+      2  |   28.88% |      27.00% |    1.88% | 2.0294
+      3  |   42.00% |      31.48% |   10.52% | 1.6212
+      4  |   60.36% |      29.12% |   31.24% | 1.1790
+      5  |   64.04% |      29.12% |   34.92% | 1.1261
+      6  |   66.48% |      32.36% |   34.12% | 1.0260
+      7  |   77.76% |      34.08% |   43.68% | 0.7363
+      8  |   80.20% |      31.88% |   48.32% | 0.7400
+      9  |   80.80% |      35.96% |   44.84% | 0.6165
+     10  |   87.40% |      37.44% |   49.96% | 0.4058
+     11  |   88.80% |      36.48% |   52.32% | 0.3599
+     12  |   90.08% |      38.40% |   51.68% | 0.3279
+     13  |   89.76% |      37.08% |   52.68% | 0.4260
+     14  |   91.44% |      36.28% |   55.16% | 0.2814
+     15  |   92.00% |      38.64% |   53.36% | 0.2441
+     16  |   92.36% |      35.84% |   56.52% | 0.2715
+     17  |   90.88% |      36.24% |   54.64% | 0.3305
+     18  |   91.80% |      36.60% |   55.20% | 0.2931
+     19  |   93.04% |      35.48% |   57.56% | 0.2760
+     20  |   94.76% |      37.16% |   57.60% | 0.2025
+     21  |   95.28% |      37.28% |   58.00% | 0.1892
+     22  |   94.84% |      38.88% |   55.96% | 0.1924
+     23  |   94.00% |      37.32% |   56.68% | 0.2132
+     24  |   92.28% |      36.60% |   55.68% | 0.3209
+     25  |   90.88% |      36.16% |   54.72% | 0.3203
+     26  |   89.92% |      37.48% |   52.44% | 0.2963
+     27  |   91.60% |      38.60% |   53.00% | 0.2742
+     28  |   95.44% |      39.12% |   56.32% | 0.1579
+     29  |   97.60% |      40.76% |   56.84% | 0.0787
+     30  |   98.08% |      40.16% |   57.92% | 0.0521
+     31  |   98.96% |      39.72% |   59.24% | 0.0303
+     32  |   99.52% |      41.40% |   58.12% | 0.0199
+     33  |   99.60% |      40.28% |   59.32% | 0.0155
+     34  |   99.16% |      39.12% |   60.04% | 0.0299
+     35  |   98.36% |      39.20% |   59.16% | 0.0434
+     36  |   97.64% |      39.64% |   58.00% | 0.0854
+     37  |   96.64% |      38.20% |   58.44% | 0.1111
+     38  |   95.88% |      38.72% |   57.16% | 0.1557
+     39  |   96.72% |      38.24% |   58.48% | 0.1300
+     40  |   97.00% |      39.48% |   57.52% | 0.1018
+     41  |   92.08% |      37.12% |   54.96% | 0.2903
+     42  |   91.04% |      39.32% |   51.72% | 0.3113
+     43  |   92.52% |      39.40% |   53.12% | 0.2439
+     44  |   97.04% |      40.48% |   56.56% | 0.0972
+     45  |   97.80% |      41.24% |   56.56% | 0.0796
+     46  |   98.76% |      38.72% |   60.04% | 0.0491
+     47  |   99.32% |      40.28% |   59.04% | 0.0243
+     48  |   99.76% |      41.52% |   58.24% | 0.0102
+     49  |   99.72% |      41.72% |   58.00% | 0.0092
+     50  |   99.84% |      43.28% |   56.56% | 0.0056
+
+[DONE] Target model saved to models/targets/resnet50_STL10_baseline.pth
+  Final Member Acc     : 99.84%
+  Final Non-Member Acc : 43.28%
+  Generalization Gap   : 56.56%  ← privacy signal ceiling
+[DONE] Plot saved to results/target_training_STL10.png
+--> [2/4] Generating Trajectories (ResNet-50)...
+Generating trajectories on: cuda for STL10
+Target model loaded.
+
+Probing Members  (up to 10000 samples)...
+Members:   0%|                                                             | 0/20 [00:00<?, ?it/s]Generating trajectories on: cuda for STL10
+Target model loaded.
+Generating trajectories on: cuda for STL10
+Target model loaded.
+Members: 100%|████████████████████████████████████████████████████| 20/20 [00:34<00:00,  1.74s/it]
+  → 2500 samples,  shape: (2500, 12, 33)
+
+Probing Non-Members  (up to 10000 samples)...
+Non-Members: 100%|████████████████████████████████████████████████| 20/20 [00:26<00:00,  1.34s/it]
+  → 2500 samples,  shape: (2500, 12, 33)
+
+[DONE] Saved to data/trajectories/STL10/
+
+  --- Auditor Run 1/3 (Seed: 42) ---
+  --> [3/4] Training Trajectory Transformer...
+Loading trajectory data for STL10...
+
+Training on: cuda
+C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328\src\auditor_arch.py:88: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+
+Training Trajectory Transformer for 40 epochs...
+
+Epoch [01/40]  Loss (T/V): 0.5152/0.4150  Acc (T/V): 75.3%/84.9%  AUC: 0.8964  LR: 0.000300  <-- best
+Epoch [02/40]  Loss (T/V): 0.4093/0.3824  Acc (T/V): 84.3%/85.3%  AUC: 0.9095  LR: 0.000298  <-- best
+Epoch [03/40]  Loss (T/V): 0.3887/0.3877  Acc (T/V): 86.2%/85.4%  AUC: 0.9128  LR: 0.000296  <-- best
+Epoch [04/40]  Loss (T/V): 0.3815/0.3774  Acc (T/V): 85.8%/86.6%  AUC: 0.9100  LR: 0.000293
+Epoch [05/40]  Loss (T/V): 0.3767/0.3637  Acc (T/V): 86.8%/86.7%  AUC: 0.9274  LR: 0.000289  <-- best
+Epoch [06/40]  Loss (T/V): 0.3648/0.3556  Acc (T/V): 87.3%/86.8%  AUC: 0.9292  LR: 0.000284  <-- best
+Epoch [07/40]  Loss (T/V): 0.3705/0.3606  Acc (T/V): 86.7%/87.4%  AUC: 0.9223  LR: 0.000278
+Epoch [08/40]  Loss (T/V): 0.3590/0.3674  Acc (T/V): 87.3%/86.5%  AUC: 0.9249  LR: 0.000271
+Epoch [09/40]  Loss (T/V): 0.3561/0.3581  Acc (T/V): 87.7%/87.8%  AUC: 0.9188  LR: 0.000264
+Epoch [10/40]  Loss (T/V): 0.3553/0.3583  Acc (T/V): 87.6%/86.8%  AUC: 0.9245  LR: 0.000256
+Epoch [11/40]  Loss (T/V): 0.3506/0.3526  Acc (T/V): 87.9%/87.9%  AUC: 0.9280  LR: 0.000248
+Epoch [12/40]  Loss (T/V): 0.3424/0.3684  Acc (T/V): 88.1%/86.6%  AUC: 0.9243  LR: 0.000238
+Epoch [13/40]  Loss (T/V): 0.3456/0.3554  Acc (T/V): 87.9%/87.6%  AUC: 0.9224  LR: 0.000229
+Epoch [14/40]  Loss (T/V): 0.3458/0.3493  Acc (T/V): 88.2%/87.7%  AUC: 0.9275  LR: 0.000218
+Epoch [15/40]  Loss (T/V): 0.3404/0.3466  Acc (T/V): 88.7%/87.6%  AUC: 0.9310  LR: 0.000208  <-- best
+Epoch [16/40]  Loss (T/V): 0.3372/0.3550  Acc (T/V): 88.3%/87.7%  AUC: 0.9234  LR: 0.000197
+Epoch [17/40]  Loss (T/V): 0.3381/0.3617  Acc (T/V): 88.5%/87.3%  AUC: 0.9257  LR: 0.000185
+Epoch [18/40]  Loss (T/V): 0.3387/0.3549  Acc (T/V): 88.2%/88.1%  AUC: 0.9251  LR: 0.000174
+Epoch [19/40]  Loss (T/V): 0.3305/0.3585  Acc (T/V): 89.3%/88.0%  AUC: 0.9227  LR: 0.000162
+Epoch [20/40]  Loss (T/V): 0.3331/0.3597  Acc (T/V): 88.8%/87.8%  AUC: 0.9226  LR: 0.000150
+Epoch [21/40]  Loss (T/V): 0.3269/0.3537  Acc (T/V): 89.2%/88.2%  AUC: 0.9254  LR: 0.000139
+Epoch [22/40]  Loss (T/V): 0.3321/0.3564  Acc (T/V): 89.1%/87.3%  AUC: 0.9271  LR: 0.000127
+Epoch [23/40]  Loss (T/V): 0.3257/0.3556  Acc (T/V): 89.2%/88.1%  AUC: 0.9243  LR: 0.000116
+Epoch [24/40]  Loss (T/V): 0.3203/0.3508  Acc (T/V): 89.7%/88.5%  AUC: 0.9304  LR: 0.000104
+Epoch [25/40]  Loss (T/V): 0.3180/0.3503  Acc (T/V): 89.6%/88.8%  AUC: 0.9278  LR: 0.000093
+Epoch [26/40]  Loss (T/V): 0.3209/0.3540  Acc (T/V): 89.3%/87.9%  AUC: 0.9294  LR: 0.000083
+Epoch [27/40]  Loss (T/V): 0.3189/0.3543  Acc (T/V): 90.0%/88.3%  AUC: 0.9288  LR: 0.000072
+Epoch [28/40]  Loss (T/V): 0.3238/0.3545  Acc (T/V): 90.0%/88.0%  AUC: 0.9263  LR: 0.000063
+Epoch [29/40]  Loss (T/V): 0.3167/0.3542  Acc (T/V): 90.2%/88.3%  AUC: 0.9290  LR: 0.000053
+Epoch [30/40]  Loss (T/V): 0.3137/0.3548  Acc (T/V): 90.1%/88.5%  AUC: 0.9289  LR: 0.000045
+Epoch [31/40]  Loss (T/V): 0.3145/0.3526  Acc (T/V): 90.2%/88.5%  AUC: 0.9280  LR: 0.000037
+Epoch [32/40]  Loss (T/V): 0.3116/0.3529  Acc (T/V): 90.0%/88.4%  AUC: 0.9287  LR: 0.000030
+Epoch [33/40]  Loss (T/V): 0.3082/0.3519  Acc (T/V): 90.2%/88.6%  AUC: 0.9296  LR: 0.000023
+Epoch [34/40]  Loss (T/V): 0.3042/0.3537  Acc (T/V): 90.5%/88.3%  AUC: 0.9290  LR: 0.000017
+Epoch [35/40]  Loss (T/V): 0.3082/0.3534  Acc (T/V): 90.2%/88.7%  AUC: 0.9292  LR: 0.000012
+Epoch [36/40]  Loss (T/V): 0.3043/0.3536  Acc (T/V): 90.5%/88.7%  AUC: 0.9289  LR: 0.000008
+Epoch [37/40]  Loss (T/V): 0.3045/0.3540  Acc (T/V): 90.5%/88.2%  AUC: 0.9292  LR: 0.000005
+Epoch [38/40]  Loss (T/V): 0.3052/0.3541  Acc (T/V): 90.6%/88.3%  AUC: 0.9290  LR: 0.000003
+Epoch [39/40]  Loss (T/V): 0.3076/0.3542  Acc (T/V): 90.4%/88.3%  AUC: 0.9291  LR: 0.000001
+Epoch [40/40]  Loss (T/V): 0.3042/0.3544  Acc (T/V): 90.6%/88.4%  AUC: 0.9290  LR: 0.000001
+
+[DONE] Best model saved to models/auditors/STL10/transformer_auditor_best.pth
+  --> [4/4] Evaluating Auditor...
+  [OK] Run 1 Complete: Acc=87.60%, AUC=93.10%
+
+  --- Auditor Run 2/3 (Seed: 43) ---
+  --> [3/4] Training Trajectory Transformer...
+Loading trajectory data for STL10...
+
+Training on: cuda
+C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328\src\auditor_arch.py:88: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+
+Training Trajectory Transformer for 40 epochs...
+
+Epoch [01/40]  Loss (T/V): 0.5443/0.4153  Acc (T/V): 73.6%/84.3%  AUC: 0.8921  LR: 0.000300  <-- best
+Epoch [02/40]  Loss (T/V): 0.4143/0.3935  Acc (T/V): 83.7%/85.8%  AUC: 0.9038  LR: 0.000298  <-- best
+Epoch [03/40]  Loss (T/V): 0.3980/0.3793  Acc (T/V): 84.7%/86.0%  AUC: 0.9131  LR: 0.000296  <-- best
+Epoch [04/40]  Loss (T/V): 0.3818/0.3959  Acc (T/V): 86.2%/86.1%  AUC: 0.9044  LR: 0.000293
+Epoch [05/40]  Loss (T/V): 0.3798/0.3745  Acc (T/V): 86.0%/86.2%  AUC: 0.9086  LR: 0.000289
+Epoch [06/40]  Loss (T/V): 0.3683/0.3775  Acc (T/V): 86.8%/86.4%  AUC: 0.9077  LR: 0.000284
+Epoch [07/40]  Loss (T/V): 0.3721/0.3627  Acc (T/V): 86.5%/86.8%  AUC: 0.9222  LR: 0.000278  <-- best
+Epoch [08/40]  Loss (T/V): 0.3658/0.3573  Acc (T/V): 86.8%/87.7%  AUC: 0.9230  LR: 0.000271  <-- best
+Epoch [09/40]  Loss (T/V): 0.3592/0.3480  Acc (T/V): 87.0%/88.3%  AUC: 0.9238  LR: 0.000264  <-- best
+Epoch [10/40]  Loss (T/V): 0.3533/0.3578  Acc (T/V): 87.7%/87.8%  AUC: 0.9185  LR: 0.000256
+Epoch [11/40]  Loss (T/V): 0.3495/0.3485  Acc (T/V): 87.9%/87.9%  AUC: 0.9253  LR: 0.000248  <-- best
+Epoch [12/40]  Loss (T/V): 0.3443/0.3546  Acc (T/V): 88.0%/88.2%  AUC: 0.9179  LR: 0.000238
+Epoch [13/40]  Loss (T/V): 0.3487/0.3530  Acc (T/V): 87.9%/88.4%  AUC: 0.9216  LR: 0.000229
+Epoch [14/40]  Loss (T/V): 0.3420/0.3490  Acc (T/V): 88.0%/87.9%  AUC: 0.9249  LR: 0.000218
+Epoch [15/40]  Loss (T/V): 0.3481/0.3503  Acc (T/V): 88.2%/87.7%  AUC: 0.9266  LR: 0.000208  <-- best
+Epoch [16/40]  Loss (T/V): 0.3417/0.3465  Acc (T/V): 88.2%/88.6%  AUC: 0.9254  LR: 0.000197
+Epoch [17/40]  Loss (T/V): 0.3362/0.3520  Acc (T/V): 88.8%/88.4%  AUC: 0.9239  LR: 0.000185
+Epoch [18/40]  Loss (T/V): 0.3343/0.3527  Acc (T/V): 88.8%/88.0%  AUC: 0.9249  LR: 0.000174
+Epoch [19/40]  Loss (T/V): 0.3352/0.3477  Acc (T/V): 88.4%/88.6%  AUC: 0.9215  LR: 0.000162
+Epoch [20/40]  Loss (T/V): 0.3298/0.3472  Acc (T/V): 88.8%/88.7%  AUC: 0.9234  LR: 0.000150
+Epoch [21/40]  Loss (T/V): 0.3300/0.3523  Acc (T/V): 89.0%/88.0%  AUC: 0.9214  LR: 0.000139
+Epoch [22/40]  Loss (T/V): 0.3273/0.3462  Acc (T/V): 89.2%/88.2%  AUC: 0.9287  LR: 0.000127  <-- best
+Epoch [23/40]  Loss (T/V): 0.3250/0.3536  Acc (T/V): 89.4%/87.5%  AUC: 0.9230  LR: 0.000116
+Epoch [24/40]  Loss (T/V): 0.3244/0.3496  Acc (T/V): 89.2%/88.5%  AUC: 0.9214  LR: 0.000104
+Epoch [25/40]  Loss (T/V): 0.3219/0.3579  Acc (T/V): 89.6%/87.4%  AUC: 0.9247  LR: 0.000093
+Epoch [26/40]  Loss (T/V): 0.3213/0.3515  Acc (T/V): 89.8%/88.2%  AUC: 0.9223  LR: 0.000083
+Epoch [27/40]  Loss (T/V): 0.3162/0.3499  Acc (T/V): 89.4%/88.9%  AUC: 0.9283  LR: 0.000072
+Epoch [28/40]  Loss (T/V): 0.3104/0.3481  Acc (T/V): 89.8%/88.6%  AUC: 0.9279  LR: 0.000063
+Epoch [29/40]  Loss (T/V): 0.3171/0.3513  Acc (T/V): 89.7%/87.9%  AUC: 0.9276  LR: 0.000053
+Epoch [30/40]  Loss (T/V): 0.3152/0.3502  Acc (T/V): 90.0%/88.4%  AUC: 0.9264  LR: 0.000045
+Epoch [31/40]  Loss (T/V): 0.3089/0.3491  Acc (T/V): 90.2%/87.6%  AUC: 0.9266  LR: 0.000037
+Epoch [32/40]  Loss (T/V): 0.3078/0.3509  Acc (T/V): 90.2%/88.9%  AUC: 0.9246  LR: 0.000030
+Epoch [33/40]  Loss (T/V): 0.3077/0.3516  Acc (T/V): 89.9%/88.3%  AUC: 0.9247  LR: 0.000023
+Epoch [34/40]  Loss (T/V): 0.3025/0.3538  Acc (T/V): 90.2%/87.9%  AUC: 0.9276  LR: 0.000017
+Epoch [35/40]  Loss (T/V): 0.3036/0.3509  Acc (T/V): 90.4%/88.6%  AUC: 0.9255  LR: 0.000012
+Epoch [36/40]  Loss (T/V): 0.3067/0.3509  Acc (T/V): 90.3%/88.4%  AUC: 0.9262  LR: 0.000008
+Epoch [37/40]  Loss (T/V): 0.3000/0.3508  Acc (T/V): 90.5%/88.5%  AUC: 0.9260  LR: 0.000005
+Epoch [38/40]  Loss (T/V): 0.3003/0.3513  Acc (T/V): 90.4%/88.4%  AUC: 0.9259  LR: 0.000003
+Epoch [39/40]  Loss (T/V): 0.3051/0.3515  Acc (T/V): 90.5%/88.4%  AUC: 0.9258  LR: 0.000001
+Epoch [40/40]  Loss (T/V): 0.2994/0.3515  Acc (T/V): 90.3%/88.4%  AUC: 0.9256  LR: 0.000001
+
+[DONE] Best model saved to models/auditors/STL10/transformer_auditor_best.pth
+  --> [4/4] Evaluating Auditor...
+  [OK] Run 2 Complete: Acc=88.20%, AUC=92.87%
+
+  --- Auditor Run 3/3 (Seed: 44) ---
+  --> [3/4] Training Trajectory Transformer...
+Loading trajectory data for STL10...
+
+Training on: cuda
+C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328\src\auditor_arch.py:88: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.transformer = nn.TransformerEncoder(
+
+Training Trajectory Transformer for 40 epochs...
+
+Epoch [01/40]  Loss (T/V): 0.5155/0.4194  Acc (T/V): 76.0%/83.3%  AUC: 0.8900  LR: 0.000300  <-- best
+Epoch [02/40]  Loss (T/V): 0.4154/0.4116  Acc (T/V): 84.5%/83.6%  AUC: 0.8934  LR: 0.000298  <-- best
+Epoch [03/40]  Loss (T/V): 0.3849/0.4221  Acc (T/V): 85.5%/85.7%  AUC: 0.9014  LR: 0.000296  <-- best
+Epoch [04/40]  Loss (T/V): 0.3924/0.4081  Acc (T/V): 85.6%/85.3%  AUC: 0.8904  LR: 0.000293
+Epoch [05/40]  Loss (T/V): 0.3800/0.3881  Acc (T/V): 85.8%/86.7%  AUC: 0.8993  LR: 0.000289
+Epoch [06/40]  Loss (T/V): 0.3706/0.3820  Acc (T/V): 86.5%/85.9%  AUC: 0.9088  LR: 0.000284  <-- best
+Epoch [07/40]  Loss (T/V): 0.3693/0.3927  Acc (T/V): 86.7%/85.9%  AUC: 0.9064  LR: 0.000278
+Epoch [08/40]  Loss (T/V): 0.3622/0.3766  Acc (T/V): 86.8%/86.8%  AUC: 0.9067  LR: 0.000271
+Epoch [09/40]  Loss (T/V): 0.3586/0.3853  Acc (T/V): 87.2%/85.9%  AUC: 0.9031  LR: 0.000264
+Epoch [10/40]  Loss (T/V): 0.3645/0.3834  Acc (T/V): 86.8%/87.0%  AUC: 0.9076  LR: 0.000256
+Epoch [11/40]  Loss (T/V): 0.3495/0.3731  Acc (T/V): 87.7%/87.2%  AUC: 0.9123  LR: 0.000248  <-- best
+Epoch [12/40]  Loss (T/V): 0.3504/0.3851  Acc (T/V): 88.0%/86.6%  AUC: 0.9106  LR: 0.000238
+Epoch [13/40]  Loss (T/V): 0.3539/0.3843  Acc (T/V): 87.7%/87.1%  AUC: 0.9038  LR: 0.000229
+Epoch [14/40]  Loss (T/V): 0.3456/0.3636  Acc (T/V): 87.7%/87.1%  AUC: 0.9211  LR: 0.000218  <-- best
+Epoch [15/40]  Loss (T/V): 0.3391/0.3736  Acc (T/V): 88.4%/87.4%  AUC: 0.9121  LR: 0.000208
+Epoch [16/40]  Loss (T/V): 0.3359/0.3757  Acc (T/V): 88.2%/87.6%  AUC: 0.9133  LR: 0.000197
+Epoch [17/40]  Loss (T/V): 0.3305/0.3936  Acc (T/V): 88.5%/86.5%  AUC: 0.9031  LR: 0.000185
+Epoch [18/40]  Loss (T/V): 0.3361/0.3629  Acc (T/V): 88.6%/88.0%  AUC: 0.9176  LR: 0.000174
+Epoch [19/40]  Loss (T/V): 0.3310/0.3721  Acc (T/V): 88.8%/87.2%  AUC: 0.9126  LR: 0.000162
+Epoch [20/40]  Loss (T/V): 0.3305/0.3786  Acc (T/V): 89.0%/87.1%  AUC: 0.9103  LR: 0.000150
+Epoch [21/40]  Loss (T/V): 0.3214/0.3769  Acc (T/V): 89.2%/87.2%  AUC: 0.9132  LR: 0.000139
+Epoch [22/40]  Loss (T/V): 0.3213/0.3741  Acc (T/V): 89.2%/87.3%  AUC: 0.9149  LR: 0.000127
+Epoch [23/40]  Loss (T/V): 0.3201/0.3818  Acc (T/V): 89.2%/86.7%  AUC: 0.9092  LR: 0.000116
+Epoch [24/40]  Loss (T/V): 0.3158/0.3735  Acc (T/V): 89.7%/87.5%  AUC: 0.9175  LR: 0.000104
+Epoch [25/40]  Loss (T/V): 0.3145/0.3837  Acc (T/V): 89.6%/87.6%  AUC: 0.9093  LR: 0.000093
+Epoch [26/40]  Loss (T/V): 0.3095/0.3856  Acc (T/V): 90.2%/87.2%  AUC: 0.9082  LR: 0.000083
+Epoch [27/40]  Loss (T/V): 0.3089/0.3821  Acc (T/V): 89.8%/87.3%  AUC: 0.9135  LR: 0.000072
+Epoch [28/40]  Loss (T/V): 0.3068/0.3789  Acc (T/V): 90.2%/87.4%  AUC: 0.9140  LR: 0.000063
+Epoch [29/40]  Loss (T/V): 0.3071/0.3830  Acc (T/V): 90.0%/87.8%  AUC: 0.9141  LR: 0.000053
+Epoch [30/40]  Loss (T/V): 0.3091/0.3810  Acc (T/V): 89.8%/87.7%  AUC: 0.9138  LR: 0.000045
+Epoch [31/40]  Loss (T/V): 0.2995/0.3899  Acc (T/V): 90.6%/87.1%  AUC: 0.9105  LR: 0.000037
+Epoch [32/40]  Loss (T/V): 0.3034/0.3876  Acc (T/V): 90.6%/87.4%  AUC: 0.9094  LR: 0.000030
+Epoch [33/40]  Loss (T/V): 0.2971/0.3829  Acc (T/V): 90.8%/87.5%  AUC: 0.9137  LR: 0.000023
+Epoch [34/40]  Loss (T/V): 0.2974/0.3849  Acc (T/V): 90.5%/87.2%  AUC: 0.9119  LR: 0.000017
+Epoch [35/40]  Loss (T/V): 0.2968/0.3873  Acc (T/V): 90.7%/87.2%  AUC: 0.9113  LR: 0.000012
+Epoch [36/40]  Loss (T/V): 0.3029/0.3862  Acc (T/V): 90.5%/87.5%  AUC: 0.9123  LR: 0.000008
+Epoch [37/40]  Loss (T/V): 0.2949/0.3850  Acc (T/V): 91.1%/87.1%  AUC: 0.9129  LR: 0.000005
+Epoch [38/40]  Loss (T/V): 0.2954/0.3849  Acc (T/V): 90.9%/87.4%  AUC: 0.9131  LR: 0.000003
+Epoch [39/40]  Loss (T/V): 0.2920/0.3857  Acc (T/V): 90.8%/87.4%  AUC: 0.9128  LR: 0.000001
+Epoch [40/40]  Loss (T/V): 0.2922/0.3858  Acc (T/V): 90.8%/87.5%  AUC: 0.9129  LR: 0.000001
+
+[DONE] Best model saved to models/auditors/STL10/transformer_auditor_best.pth
+  --> [4/4] Evaluating Auditor...
+  [OK] Run 3 Complete: Acc=87.10%, AUC=92.11%
+
+
+======================================================================
+ FINAL METRICS FOR TABLE 3 (ResNet-50 White-Box)
+======================================================================
+Dataset      | Accuracy (%)         | AUROC (%)           
+----------------------------------------------------------------------
+CIFAR100     | 87.75 ± 0.27         | 93.01 ± 0.27        
+CIFAR10      | 69.35 ± 0.55         | 73.84 ± 0.40        
+STL10        | 87.63 ± 0.45         | 92.69 ± 0.42        
+======================================================================
+PS C:\Users\mohib\OneDrive\Desktop\DL\DL_PROJ\23_27100331_27100328> 
