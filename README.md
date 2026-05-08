@@ -57,6 +57,8 @@ project/
 │   ├── train_target_imia_stl10.py    # Trains strict IMIA-matched STL-10 target (Native 96x96)
 │   └── generate_data_imia_stl10.py   # Extracts trajectories from IMIA-matched target
 |
-├── additions_deliverable4.ipynb      # Notebook containing additional deliverables
-├── eval.ipynb                        # Evaluation notebook
+|── deliverables/
+|  ├── additions_deliverable3.ipynb
+|  ├── additions_deliverable4.ipynb
+|
 └── .gitignore                        # Blocks large .npy and .pth files
