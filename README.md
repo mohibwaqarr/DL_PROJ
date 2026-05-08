@@ -72,6 +72,10 @@ project/
 - numpy
 - matplotlib
 - tqdm
+To install prerequisites
+```bash
+pip install torch torchvision scikit-learn numpy matplotlib tqdm
+```
 
 ### Running the Code
 
