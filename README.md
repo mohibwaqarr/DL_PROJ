@@ -1,38 +1,35 @@
-Sequence-Aware Membership Inference: Memorization via Trajectory Transformers
-Team: Shahzaib Ali & Muhammad Mohib Waqar  
+# Sequence-Aware Membership Inference: Memorization via Trajectory Transformers
 
-What This Project Is About
-The core question this project answers is: given a trained machine learning model, can you figure out whether a specific data sample was part of its training set? This is called a Membership Inference Attack (MIA) and is a primary method for measuring whether a model leaks private training data.
+> An advanced privacy-auditing framework that implements temporal sequence learning to dynamically detect training data memorization. By capturing high-dimensional behavioral "fingerprints" of ResNet models during adversarial attacks, our framework significantly outperforms static or scalar-based Membership Inference Attacks (MIA).
 
-We build upon the IMIA (Iterative Membership Inference Attack) paper (Xue et al., 2025). IMIA formally proved that running an adversarial attack on a model leaks membership information. Because a model carves out a "valley" in its loss landscape for training data, adversarial attacks require more iterations to break a "member" sample than an unseen "non-member" sample. 
+![Trajectory Transformer Framework Pipeline](misc/framework.jpg)
 
-Our Contribution: Sequence-Aware Trajectory Auditing
-IMIA reduces the entire adversarial attack process to a single scalar: how many steps did it take to flip the prediction? We hypothesized that collapsing a dynamic attack into a single integer throws away a massive amount of geometric and behavioral information. 
+---
 
-Instead of just recording the endpoint, we record the full behavioral trajectory of the target model step-by-step during the attack. We capture cross-entropy loss, confidence collapse, gradient directionality, and internal latent representations. 
+## Table of Contents
 
-To process this, we developed a Trajectory Transformer, a secondary auditor model utilizing multi-head self-attention, learnable positional embeddings, and global mean pooling. This architecture allows us to identify the specific temporal "fingerprints" of memorization embedded within the optimization paths of adversarial probes.
+- [Project Overview](#project-overview)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [Key Innovations](#key-innovations)
+  - [The 33-Feature Resistance Spectrum](#the-33-feature-resistance-spectrum)
+  - [Trajectory Transformer Auditor](#trajectory-transformer-auditor)
+  - [Black-Box Stochastic Probing via SimBA](#black-box-stochastic-probing-via-simba)
+- [Citations](#citations)
 
-Threat Models & The Resistance Spectrum
-Our pipeline is heavily engineered to evaluate privacy leakage across different datasets and attacker capabilities.
+---
 
-1. White-Box Attack (PGD)
-   * Uses a 12-step Projected Gradient Descent (PGD) probe.
-   * Extracts a 33-feature "Resistance Spectrum" per step (Loss, Confidence, Gradient Norms, Gradient Direction Cosine Similarity, Probability Gap, Entropy, and Layer-4 activation drift).
-   * Attacks are run simultaneously at 3 distinct $\epsilon$-scales (0.01, 0.04, 0.08) to capture the target model's behavior under different optimization pressures.
-2. Score-Based Black-Box Attack (SimBA)
-   * Attacker has no access to model weights or gradients.
-   * Uses a 20-step batched random-walk stochastic search (SimBA-style).
-   * Extracts 21 features per step (Loss, Confidence, Entropy, Deltas).
+## Project Overview
 
-## Supported Architectures & Datasets
-* **Target Architecture:** ResNet Models (ResNet-50)
-* **Auditor Architectures:** Trajectory Transformer (and a Bi-LSTM baseline for ablation)
-* **Datasets Supported:** CIFAR-10, CIFAR-100, and STL-10. 
-* **Ablation Ready:** The pipeline includes dynamic data loaders and a strict IMIA-matched replication setup (native 96x96 resolution, SGD, standard augmentation) to isolate the effects of target model regularization on privacy leakage.
+Membership Inference Attacks (MIA) serve as a critical audit for the privacy of individuals within machine learning datasets. Traditional auditing methodologies rely on scalar iteration counts or static posterior metrics, which collapse high-dimensional behavioral signals into a single value, leading to significant information loss.
+
+Our framework addresses this by recording the **full behavioral trajectory** of a target model step-by-step as it is subjected to an adversarial probe. We track features across three separate perturbation budgets simultaneously to build a multi-resolution **Resistance Spectrum**. This trajectory sequence is then passed to a custom **Trajectory Transformer** auditor utilizing self-attention to identify temporal markers of unintended memorization.
+
+---
 
 ## Repository Structure
-```text
+
+```
 project/
 ├── src/
 │   ├── data_loader.py                # Unified data splitting (CIFAR10/100, STL10)
@@ -56,9 +53,204 @@ project/
 │   ├── resume_imia_stl10.py          # Smart-resume orchestrator for STL-10
 │   ├── train_target_imia_stl10.py    # Trains strict IMIA-matched STL-10 target (Native 96x96)
 │   └── generate_data_imia_stl10.py   # Extracts trajectories from IMIA-matched target
-|
-|── deliverables/
-|  ├── additions_deliverable3.ipynb
-|  ├── additions_deliverable4.ipynb
-|
+│
+├── deliverables/
+│   ├── additions_deliverable3.ipynb
+│   └── additions_deliverable4.ipynb
+│
 └── .gitignore                        # Blocks large .npy and .pth files
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8+
+- PyTorch
+- torchvision
+- scikit-learn
+- numpy
+- matplotlib
+- tqdm
+
+### Running the Code
+
+Our pipeline operates sequentially. Execute all scripts from the **root directory** of the project.
+
+---
+
+#### 1. Standard White-Box Evaluation (PGD-12)
+
+Run the automated orchestrator:
+
+```bash
+python whitebox/master_table3.py
+```
+
+Or execute the scripts manually, step-by-step:
+
+```bash
+python whitebox/train_target.py
+python whitebox/generate_data.py
+python whitebox/train_auditor.py
+python whitebox/evaluate_auditor.py
+```
+
+---
+
+#### 2. Score-Based Black-Box Evaluation (SimBA-20)
+
+Run the automated orchestrator:
+
+```bash
+python blackbox/master_bb.py
+```
+
+Or execute the scripts manually, step-by-step:
+
+```bash
+python blackbox/generate_data_bb.py
+python blackbox/train_auditor_bb.py
+python blackbox/evaluate_auditor_bb.py
+```
+
+---
+
+#### 3. Strict IMIA-Matched STL-10 Ablation Study
+
+Run the automated orchestrator:
+
+```bash
+python stl_comparison_multiple_archs/master_imia_stl10.py
+```
+
+Or resume an interrupted run safely using:
+
+```bash
+python stl_comparison_multiple_archs/resume_imia_stl10.py
+```
+
+---
+
+## Key Innovations
+
+### The 33-Feature Resistance Spectrum
+
+To capture a sample's robust resistance to optimization, we log **11 core behavioral metrics** at every step of a 12-step PGD probe across three independent epsilon budgets ($\epsilon \in \{0.01, 0.04, 0.08\}$):
+
+```python
+def extract_resistance_spectrum_step(model, images, labels, clean_features):
+    # Extracts the 11-dimensional step vector
+    loss = compute_cross_entropy(model, images, labels)
+    confidence = compute_softmax_confidence(model, images)
+    entropy = compute_prediction_entropy(model, images)
+    prob_gap = compute_top_two_margin(model, images)
+
+    grad_norm = compute_input_gradient_norm(model, images, labels)
+    grad_cosine = compute_gradient_cosine_similarity(current_grad, prev_grad)
+
+    # Internal representation dynamics
+    layer4_features = get_layer4_activations(model, images)
+    l4_cosine = compute_cosine_similarity(layer4_features, clean_features)
+    l4_drift = compute_l2_activation_drift(layer4_features, clean_features)
+
+    return torch.stack([
+        loss, confidence, entropy, prob_gap, grad_norm, grad_cosine,
+        delta_loss, delta_confidence, l4_cosine, l4_drift, is_correct
+    ], dim=1)
+```
+
+By tracing internal activations alongside posterior changes, the auditor observes **"latent rigidity"** in intermediate layers — where a memorized member's representations resist moving under attack.
+
+---
+
+### Trajectory Transformer Auditor
+
+Instead of recurrent models which dilute early sequence features with late-stage convergence noise, we use a custom self-attention block with **Learnable Positional Embeddings** to isolate highly discriminative steps.
+
+```python
+class TrajectoryTransformer(nn.Module):
+    def __init__(self, input_size=33, d_model=64, nhead=4, num_layers=2):
+        super().__init__()
+        self.embedding = nn.Linear(input_size, d_model)
+        # Learnable temporal parameters rather than static sinusoids
+        self.pos_embeddings = nn.Parameter(torch.randn(12, d_model))
+        self.transformer = nn.TransformerEncoder(
+            nn.TransformerEncoderLayer(d_model, nhead, dim_feedforward=128, dropout=0.3, norm_first=True),
+            num_layers=num_layers
+        )
+        self.fc = nn.Linear(d_model, 1)
+
+    def forward(self, x):
+        # x shape: [Batch, Steps, Features]
+        seq_len = x.size(1)
+        x = self.embedding(x) + self.pos_embeddings[:seq_len]
+        x = self.transformer(x)
+
+        # Threshold-independent Global Mean Pooling
+        z = x.mean(dim=1)
+        return torch.sigmoid(self.fc(z))
+```
+
+---
+
+### Black-Box Stochastic Probing via SimBA
+
+In hard-label or score-only environments, gradient backpropagation is unavailable. We implement a **SimBA-style random-walk optimization**. The auditor tracks the model's posterior response across 20 stochastic steps, locating stable local minima where member samples resist random coordinate walks:
+
+```python
+def generate_simba_trajectory(model, x, y, steps=20, alpha=0.005):
+    trajectory = []
+    x_adv = x.clone()
+
+    for t in range(steps):
+        q = sample_random_orthonormal_basis(x)
+
+        # Probe positive and negative directions
+        loss_plus = get_loss(model, x_adv + alpha * q, y)
+        loss_minus = get_loss(model, x_adv - alpha * q, y)
+
+        # Keep the perturbation that maximizes loss
+        if loss_plus > loss_minus and loss_plus > current_loss:
+            x_adv = x_adv + alpha * q
+        elif loss_minus > loss_plus and loss_minus > current_loss:
+            x_adv = x_adv - alpha * q
+
+        trajectory.append([current_loss, current_confidence, current_entropy])
+
+    return trajectory
+```
+
+---
+
+## Citations
+
+```bibtex
+@article{xue2025imia,
+  author  = {Xue, M. et al.},
+  title   = {IMIA: Iterative Membership Inference Attack via Adversarial Perturbation},
+  year    = {2025}
+}
+
+@inproceedings{carlini2022membership,
+  author    = {Carlini, N. and Chien, S. and Nasr, M. and Song, S. and Terzis, A. and Tramer, F.},
+  title     = {Membership Inference Attacks From First Principles},
+  booktitle = {IEEE S\&P},
+  year      = {2022}
+}
+
+@article{aubinais2025theoretical,
+  author  = {Aubinais et al.},
+  title   = {Theoretical Foundations of Membership Inference and Non-Linear Memorization Bounds},
+  year    = {2025}
+}
+
+@inproceedings{feldman2020neural,
+  author    = {Feldman, V. and Zhang, C.},
+  title     = {What Neural Networks Memorize and Why: Discovering the Long Tail via Influence Estimation},
+  booktitle = {NeurIPS},
+  year      = {2020}
+}
+```
