@@ -1,6 +1,6 @@
 # Sequence-Aware Membership Inference: Memorization via Trajectory Transformers
 
-> An advanced privacy-auditing framework that implements temporal sequence learning to dynamically detect training data memorization. By capturing high-dimensional behavioral "fingerprints" of ResNet models during adversarial attacks, our framework significantly outperforms static or scalar-based Membership Inference Attacks (MIA).
+> An advanced privacy-auditing framework that implements temporal sequence learning to dynamically detect training data memorization..
 
 
 ---
