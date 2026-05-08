@@ -2,8 +2,6 @@
 
 > An advanced privacy-auditing framework that implements temporal sequence learning to dynamically detect training data memorization.
 
-![Trajectory Transformer Framework Pipeline](misc/framework.jpg)
-
 ---
 
 ## Table of Contents
