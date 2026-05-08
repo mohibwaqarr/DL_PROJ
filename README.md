@@ -1,7 +1,8 @@
 # Sequence-Aware Membership Inference: Memorization via Trajectory Transformers
 
-> An advanced privacy-auditing framework that implements temporal sequence learning to dynamically detect training data memorization..
+> An advanced privacy-auditing framework that implements temporal sequence learning to dynamically detect training data memorization.
 
+![Trajectory Transformer Framework Pipeline](misc/framework.jpg)
 
 ---
 
@@ -226,30 +227,14 @@ def generate_simba_trajectory(model, x, y, steps=20, alpha=0.005):
 
 ## Citations
 
-```bibtex
-@article{xue2025imia,
-  author  = {Xue, M. et al.},
-  title   = {IMIA: Iterative Membership Inference Attack via Adversarial Perturbation},
-  year    = {2025}
-}
+- **Xue, M. et al. (2025)** — *IMIA: Iterative Membership Inference Attack via Adversarial Perturbation*
+  [arxiv.org/abs/2506.02711](https://arxiv.org/abs/2506.02711)
 
-@inproceedings{carlini2022membership,
-  author    = {Carlini, N. and Chien, S. and Nasr, M. and Song, S. and Terzis, A. and Tramer, F.},
-  title     = {Membership Inference Attacks From First Principles},
-  booktitle = {IEEE S\&P},
-  year      = {2022}
-}
+- **Carlini, N., Chien, S., Nasr, M., Song, S., Terzis, A., & Tramer, F. (2022)** — *Membership Inference Attacks From First Principles* — IEEE S&P 2022
+  [arxiv.org/abs/2112.03570](https://arxiv.org/abs/2112.03570)
 
-@article{aubinais2025theoretical,
-  author  = {Aubinais et al.},
-  title   = {Theoretical Foundations of Membership Inference and Non-Linear Memorization Bounds},
-  year    = {2025}
-}
+- **Aubinais, E., Gassiat, E., & Piantanida, P. (2025)** — *Fundamental Limits of Membership Inference Attacks on Machine Learning Models*
+  [arxiv.org/abs/2310.13786](https://arxiv.org/abs/2310.13786)
 
-@inproceedings{feldman2020neural,
-  author    = {Feldman, V. and Zhang, C.},
-  title     = {What Neural Networks Memorize and Why: Discovering the Long Tail via Influence Estimation},
-  booktitle = {NeurIPS},
-  year      = {2020}
-}
-```
+- **Feldman, V., & Zhang, C. (2020)** — *What Neural Networks Memorize and Why: Discovering the Long Tail via Influence Estimation* — NeurIPS 2020
+  [arxiv.org/abs/2008.03703](https://arxiv.org/abs/2008.03703)
